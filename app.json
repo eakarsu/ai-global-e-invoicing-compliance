@@ -1,0 +1,1433 @@
+{
+  "id": "ai-global-e-invoicing-compliance",
+  "title": "InvoiceClear Global",
+  "tagline": "Jurisdiction-aware e-invoice clearance, rejection repair, and tax evidence",
+  "industry": "Global Indirect Tax",
+  "port": 4530,
+  "accent": "#0f766e",
+  "valueLabel": "Invoice value governed",
+  "value": "$1.8B",
+  "workflows": [
+    {
+      "id": "mandate-map",
+      "title": "Mandate & Jurisdiction Mapping",
+      "description": "Evaluate mandate & jurisdiction mapping with source evidence, accountable ownership, financial or operational impact, and documented approval.",
+      "fields": [
+        {
+          "key": "caseReference",
+          "label": "Mandate & Jurisdiction Mapping Reference",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "entity",
+          "label": "Legal Entity",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "reviewDate",
+          "label": "Review Date",
+          "type": "date",
+          "required": true
+        },
+        {
+          "key": "metric",
+          "label": "Jurisdictions Covered",
+          "type": "number",
+          "required": true
+        },
+        {
+          "key": "evidenceNotes",
+          "label": "Evidence and Reviewer Notes",
+          "type": "textarea",
+          "required": false
+        }
+      ],
+      "states": [
+        "intake",
+        "analyzing",
+        "review",
+        "approved",
+        "closed"
+      ],
+      "examples": [
+        {
+          "id": "standard",
+          "label": "Fill Standard Case",
+          "values": {
+            "caseReference": "Mandate & Jurisdiction Mapping Reference STD-2026-104",
+            "entity": "Legal Entity STD-2026-104",
+            "reviewDate": "2026-09-08",
+            "metric": 125,
+            "evidenceNotes": "Complete: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        },
+        {
+          "id": "high-risk",
+          "label": "Fill High-Risk Case",
+          "values": {
+            "caseReference": "Mandate & Jurisdiction Mapping Reference RISK-2026-227",
+            "entity": "Legal Entity RISK-2026-227",
+            "reviewDate": "2026-08-19",
+            "metric": 975,
+            "evidenceNotes": "Critical exception: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        },
+        {
+          "id": "exception",
+          "label": "Fill Exception Case",
+          "values": {
+            "caseReference": "Mandate & Jurisdiction Mapping Reference EXC-2026-319",
+            "entity": "Legal Entity EXC-2026-319",
+            "reviewDate": "2026-08-10",
+            "metric": 41,
+            "evidenceNotes": "Reviewer follow-up: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        }
+      ],
+      "aiActions": [
+        {
+          "id": "assess",
+          "label": "Assess Risk & Value"
+        },
+        {
+          "id": "evidence",
+          "label": "Build Evidence Checklist"
+        },
+        {
+          "id": "plan",
+          "label": "Recommend Action Plan"
+        }
+      ]
+    },
+    {
+      "id": "invoice-validation",
+      "title": "Structured Invoice Validation",
+      "description": "Evaluate structured invoice validation with source evidence, accountable ownership, financial or operational impact, and documented approval.",
+      "fields": [
+        {
+          "key": "caseReference",
+          "label": "Structured Invoice Validation Reference",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "entity",
+          "label": "Legal Entity",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "reviewDate",
+          "label": "Review Date",
+          "type": "date",
+          "required": true
+        },
+        {
+          "key": "metric",
+          "label": "Invoices Validated",
+          "type": "number",
+          "required": true
+        },
+        {
+          "key": "evidenceNotes",
+          "label": "Evidence and Reviewer Notes",
+          "type": "textarea",
+          "required": false
+        }
+      ],
+      "states": [
+        "intake",
+        "analyzing",
+        "review",
+        "approved",
+        "closed"
+      ],
+      "examples": [
+        {
+          "id": "standard",
+          "label": "Fill Standard Case",
+          "values": {
+            "caseReference": "INV-2026-00841",
+            "entity": "Legal Entity STD-2026-104",
+            "reviewDate": "2026-09-08",
+            "metric": 125,
+            "evidenceNotes": "Complete: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        },
+        {
+          "id": "high-risk",
+          "label": "Fill High-Risk Case",
+          "values": {
+            "caseReference": "INV-2026-01473",
+            "entity": "Legal Entity RISK-2026-227",
+            "reviewDate": "2026-08-19",
+            "metric": 975,
+            "evidenceNotes": "Critical exception: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        },
+        {
+          "id": "exception",
+          "label": "Fill Exception Case",
+          "values": {
+            "caseReference": "INV-2026-02219",
+            "entity": "Legal Entity EXC-2026-319",
+            "reviewDate": "2026-08-10",
+            "metric": 41,
+            "evidenceNotes": "Reviewer follow-up: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        }
+      ],
+      "aiActions": [
+        {
+          "id": "assess",
+          "label": "Assess Risk & Value"
+        },
+        {
+          "id": "evidence",
+          "label": "Build Evidence Checklist"
+        },
+        {
+          "id": "plan",
+          "label": "Recommend Action Plan"
+        }
+      ]
+    },
+    {
+      "id": "clearance",
+      "title": "Government Clearance Submission",
+      "description": "Evaluate government clearance submission with source evidence, accountable ownership, financial or operational impact, and documented approval.",
+      "fields": [
+        {
+          "key": "caseReference",
+          "label": "Government Clearance Submission Reference",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "entity",
+          "label": "Legal Entity",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "reviewDate",
+          "label": "Review Date",
+          "type": "date",
+          "required": true
+        },
+        {
+          "key": "metric",
+          "label": "Submission Value",
+          "type": "currency",
+          "required": true
+        },
+        {
+          "key": "evidenceNotes",
+          "label": "Evidence and Reviewer Notes",
+          "type": "textarea",
+          "required": false
+        }
+      ],
+      "states": [
+        "intake",
+        "analyzing",
+        "review",
+        "approved",
+        "closed"
+      ],
+      "examples": [
+        {
+          "id": "standard",
+          "label": "Fill Standard Case",
+          "values": {
+            "caseReference": "Government Clearance Submission Reference STD-2026-104",
+            "entity": "Legal Entity STD-2026-104",
+            "reviewDate": "2026-09-08",
+            "metric": 285000,
+            "evidenceNotes": "Complete: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        },
+        {
+          "id": "high-risk",
+          "label": "Fill High-Risk Case",
+          "values": {
+            "caseReference": "Government Clearance Submission Reference RISK-2026-227",
+            "entity": "Legal Entity RISK-2026-227",
+            "reviewDate": "2026-08-19",
+            "metric": 875000,
+            "evidenceNotes": "Critical exception: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        },
+        {
+          "id": "exception",
+          "label": "Fill Exception Case",
+          "values": {
+            "caseReference": "Government Clearance Submission Reference EXC-2026-319",
+            "entity": "Legal Entity EXC-2026-319",
+            "reviewDate": "2026-08-10",
+            "metric": 142500,
+            "evidenceNotes": "Reviewer follow-up: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        }
+      ],
+      "aiActions": [
+        {
+          "id": "assess",
+          "label": "Assess Risk & Value"
+        },
+        {
+          "id": "evidence",
+          "label": "Build Evidence Checklist"
+        },
+        {
+          "id": "plan",
+          "label": "Recommend Action Plan"
+        }
+      ]
+    },
+    {
+      "id": "rejection-repair",
+      "title": "Clearance Rejection Repair",
+      "description": "Evaluate clearance rejection repair with source evidence, accountable ownership, financial or operational impact, and documented approval.",
+      "fields": [
+        {
+          "key": "caseReference",
+          "label": "Clearance Rejection Repair Reference",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "entity",
+          "label": "Legal Entity",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "reviewDate",
+          "label": "Review Date",
+          "type": "date",
+          "required": true
+        },
+        {
+          "key": "metric",
+          "label": "Rejected Invoices",
+          "type": "number",
+          "required": true
+        },
+        {
+          "key": "evidenceNotes",
+          "label": "Evidence and Reviewer Notes",
+          "type": "textarea",
+          "required": false
+        }
+      ],
+      "states": [
+        "intake",
+        "analyzing",
+        "review",
+        "approved",
+        "closed"
+      ],
+      "examples": [
+        {
+          "id": "standard",
+          "label": "Fill Standard Case",
+          "values": {
+            "caseReference": "Clearance Rejection Repair Reference STD-2026-104",
+            "entity": "Legal Entity STD-2026-104",
+            "reviewDate": "2026-09-08",
+            "metric": 125,
+            "evidenceNotes": "Complete: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        },
+        {
+          "id": "high-risk",
+          "label": "Fill High-Risk Case",
+          "values": {
+            "caseReference": "Clearance Rejection Repair Reference RISK-2026-227",
+            "entity": "Legal Entity RISK-2026-227",
+            "reviewDate": "2026-08-19",
+            "metric": 975,
+            "evidenceNotes": "Critical exception: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        },
+        {
+          "id": "exception",
+          "label": "Fill Exception Case",
+          "values": {
+            "caseReference": "Clearance Rejection Repair Reference EXC-2026-319",
+            "entity": "Legal Entity EXC-2026-319",
+            "reviewDate": "2026-08-10",
+            "metric": 41,
+            "evidenceNotes": "Reviewer follow-up: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        }
+      ],
+      "aiActions": [
+        {
+          "id": "assess",
+          "label": "Assess Risk & Value"
+        },
+        {
+          "id": "evidence",
+          "label": "Build Evidence Checklist"
+        },
+        {
+          "id": "plan",
+          "label": "Recommend Action Plan"
+        }
+      ]
+    },
+    {
+      "id": "tax-evidence",
+      "title": "VAT Evidence Assembly",
+      "description": "Evaluate vat evidence assembly with source evidence, accountable ownership, financial or operational impact, and documented approval.",
+      "fields": [
+        {
+          "key": "caseReference",
+          "label": "VAT Evidence Assembly Reference",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "entity",
+          "label": "Legal Entity",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "reviewDate",
+          "label": "Review Date",
+          "type": "date",
+          "required": true
+        },
+        {
+          "key": "metric",
+          "label": "Tax Value",
+          "type": "currency",
+          "required": true
+        },
+        {
+          "key": "evidenceNotes",
+          "label": "Evidence and Reviewer Notes",
+          "type": "textarea",
+          "required": false
+        }
+      ],
+      "states": [
+        "intake",
+        "analyzing",
+        "review",
+        "approved",
+        "closed"
+      ],
+      "examples": [
+        {
+          "id": "standard",
+          "label": "Fill Standard Case",
+          "values": {
+            "caseReference": "VAT Evidence Assembly Reference STD-2026-104",
+            "entity": "Legal Entity STD-2026-104",
+            "reviewDate": "2026-09-08",
+            "metric": 285000,
+            "evidenceNotes": "Complete: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        },
+        {
+          "id": "high-risk",
+          "label": "Fill High-Risk Case",
+          "values": {
+            "caseReference": "VAT Evidence Assembly Reference RISK-2026-227",
+            "entity": "Legal Entity RISK-2026-227",
+            "reviewDate": "2026-08-19",
+            "metric": 875000,
+            "evidenceNotes": "Critical exception: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        },
+        {
+          "id": "exception",
+          "label": "Fill Exception Case",
+          "values": {
+            "caseReference": "VAT Evidence Assembly Reference EXC-2026-319",
+            "entity": "Legal Entity EXC-2026-319",
+            "reviewDate": "2026-08-10",
+            "metric": 142500,
+            "evidenceNotes": "Reviewer follow-up: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        }
+      ],
+      "aiActions": [
+        {
+          "id": "assess",
+          "label": "Assess Risk & Value"
+        },
+        {
+          "id": "evidence",
+          "label": "Build Evidence Checklist"
+        },
+        {
+          "id": "plan",
+          "label": "Recommend Action Plan"
+        }
+      ]
+    },
+    {
+      "id": "buyer-status",
+      "title": "Buyer and Supplier Status Control",
+      "description": "Evaluate buyer and supplier status control with source evidence, accountable ownership, financial or operational impact, and documented approval.",
+      "fields": [
+        {
+          "key": "caseReference",
+          "label": "Buyer and Supplier Status Control Reference",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "entity",
+          "label": "Legal Entity",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "reviewDate",
+          "label": "Review Date",
+          "type": "date",
+          "required": true
+        },
+        {
+          "key": "metric",
+          "label": "Trading Partners",
+          "type": "number",
+          "required": true
+        },
+        {
+          "key": "evidenceNotes",
+          "label": "Evidence and Reviewer Notes",
+          "type": "textarea",
+          "required": false
+        }
+      ],
+      "states": [
+        "intake",
+        "analyzing",
+        "review",
+        "approved",
+        "closed"
+      ],
+      "examples": [
+        {
+          "id": "standard",
+          "label": "Fill Standard Case",
+          "values": {
+            "caseReference": "Buyer and Supplier Status Control Reference STD-2026-104",
+            "entity": "Legal Entity STD-2026-104",
+            "reviewDate": "2026-09-08",
+            "metric": 125,
+            "evidenceNotes": "Complete: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        },
+        {
+          "id": "high-risk",
+          "label": "Fill High-Risk Case",
+          "values": {
+            "caseReference": "Buyer and Supplier Status Control Reference RISK-2026-227",
+            "entity": "Legal Entity RISK-2026-227",
+            "reviewDate": "2026-08-19",
+            "metric": 975,
+            "evidenceNotes": "Critical exception: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        },
+        {
+          "id": "exception",
+          "label": "Fill Exception Case",
+          "values": {
+            "caseReference": "Buyer and Supplier Status Control Reference EXC-2026-319",
+            "entity": "Legal Entity EXC-2026-319",
+            "reviewDate": "2026-08-10",
+            "metric": 41,
+            "evidenceNotes": "Reviewer follow-up: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        }
+      ],
+      "aiActions": [
+        {
+          "id": "assess",
+          "label": "Assess Risk & Value"
+        },
+        {
+          "id": "evidence",
+          "label": "Build Evidence Checklist"
+        },
+        {
+          "id": "plan",
+          "label": "Recommend Action Plan"
+        }
+      ]
+    },
+    {
+      "id": "archive",
+      "title": "Compliant Invoice Archive",
+      "description": "Evaluate compliant invoice archive with source evidence, accountable ownership, financial or operational impact, and documented approval.",
+      "fields": [
+        {
+          "key": "caseReference",
+          "label": "Compliant Invoice Archive Reference",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "entity",
+          "label": "Legal Entity",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "reviewDate",
+          "label": "Review Date",
+          "type": "date",
+          "required": true
+        },
+        {
+          "key": "metric",
+          "label": "Archive Volume",
+          "type": "number",
+          "required": true
+        },
+        {
+          "key": "evidenceNotes",
+          "label": "Evidence and Reviewer Notes",
+          "type": "textarea",
+          "required": false
+        }
+      ],
+      "states": [
+        "intake",
+        "analyzing",
+        "review",
+        "approved",
+        "closed"
+      ],
+      "examples": [
+        {
+          "id": "standard",
+          "label": "Fill Standard Case",
+          "values": {
+            "caseReference": "INV-2026-00841",
+            "entity": "Legal Entity STD-2026-104",
+            "reviewDate": "2026-09-08",
+            "metric": 125,
+            "evidenceNotes": "Complete: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        },
+        {
+          "id": "high-risk",
+          "label": "Fill High-Risk Case",
+          "values": {
+            "caseReference": "INV-2026-01473",
+            "entity": "Legal Entity RISK-2026-227",
+            "reviewDate": "2026-08-19",
+            "metric": 975,
+            "evidenceNotes": "Critical exception: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        },
+        {
+          "id": "exception",
+          "label": "Fill Exception Case",
+          "values": {
+            "caseReference": "INV-2026-02219",
+            "entity": "Legal Entity EXC-2026-319",
+            "reviewDate": "2026-08-10",
+            "metric": 41,
+            "evidenceNotes": "Reviewer follow-up: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        }
+      ],
+      "aiActions": [
+        {
+          "id": "assess",
+          "label": "Assess Risk & Value"
+        },
+        {
+          "id": "evidence",
+          "label": "Build Evidence Checklist"
+        },
+        {
+          "id": "plan",
+          "label": "Recommend Action Plan"
+        }
+      ]
+    },
+    {
+      "id": "rollout",
+      "title": "Country Rollout Readiness",
+      "description": "Evaluate country rollout readiness with source evidence, accountable ownership, financial or operational impact, and documented approval.",
+      "fields": [
+        {
+          "key": "caseReference",
+          "label": "Country Rollout Readiness Reference",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "entity",
+          "label": "Legal Entity",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "reviewDate",
+          "label": "Review Date",
+          "type": "date",
+          "required": true
+        },
+        {
+          "key": "metric",
+          "label": "Readiness Score",
+          "type": "number",
+          "required": true
+        },
+        {
+          "key": "evidenceNotes",
+          "label": "Evidence and Reviewer Notes",
+          "type": "textarea",
+          "required": false
+        }
+      ],
+      "states": [
+        "intake",
+        "analyzing",
+        "review",
+        "approved",
+        "closed"
+      ],
+      "examples": [
+        {
+          "id": "standard",
+          "label": "Fill Standard Case",
+          "values": {
+            "caseReference": "Country Rollout Readiness Reference STD-2026-104",
+            "entity": "Legal Entity STD-2026-104",
+            "reviewDate": "2026-09-08",
+            "metric": 88,
+            "evidenceNotes": "Complete: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        },
+        {
+          "id": "high-risk",
+          "label": "Fill High-Risk Case",
+          "values": {
+            "caseReference": "Country Rollout Readiness Reference RISK-2026-227",
+            "entity": "Legal Entity RISK-2026-227",
+            "reviewDate": "2026-08-19",
+            "metric": 42,
+            "evidenceNotes": "Critical exception: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        },
+        {
+          "id": "exception",
+          "label": "Fill Exception Case",
+          "values": {
+            "caseReference": "Country Rollout Readiness Reference EXC-2026-319",
+            "entity": "Legal Entity EXC-2026-319",
+            "reviewDate": "2026-08-10",
+            "metric": 67,
+            "evidenceNotes": "Reviewer follow-up: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        }
+      ],
+      "aiActions": [
+        {
+          "id": "assess",
+          "label": "Assess Risk & Value"
+        },
+        {
+          "id": "evidence",
+          "label": "Build Evidence Checklist"
+        },
+        {
+          "id": "plan",
+          "label": "Recommend Action Plan"
+        }
+      ]
+    }
+  ],
+  "operations": [
+    {
+      "id": "mandate-map",
+      "title": "Mandate & Jurisdiction Mapping Register",
+      "description": "Operational records, ownership, status, financial value, and evidence for mandate & jurisdiction mapping.",
+      "table": "op_mandate_map",
+      "columns": [
+        {
+          "key": "caseReference",
+          "label": "Mandate & Jurisdiction Mapping Reference",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_caseReference"
+        },
+        {
+          "key": "entity",
+          "label": "Legal Entity",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_entity"
+        },
+        {
+          "key": "reviewDate",
+          "label": "Review Date",
+          "type": "date",
+          "required": true,
+          "dbKey": "data_reviewDate"
+        },
+        {
+          "key": "metric",
+          "label": "Jurisdictions Covered",
+          "type": "number",
+          "required": true,
+          "dbKey": "data_metric"
+        },
+        {
+          "key": "evidenceNotes",
+          "label": "Evidence and Reviewer Notes",
+          "type": "textarea",
+          "required": false,
+          "dbKey": "data_evidenceNotes"
+        }
+      ]
+    },
+    {
+      "id": "invoice-validation",
+      "title": "Structured Invoice Validation Register",
+      "description": "Operational records, ownership, status, financial value, and evidence for structured invoice validation.",
+      "table": "op_invoice_validation",
+      "columns": [
+        {
+          "key": "caseReference",
+          "label": "Structured Invoice Validation Reference",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_caseReference"
+        },
+        {
+          "key": "entity",
+          "label": "Legal Entity",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_entity"
+        },
+        {
+          "key": "reviewDate",
+          "label": "Review Date",
+          "type": "date",
+          "required": true,
+          "dbKey": "data_reviewDate"
+        },
+        {
+          "key": "metric",
+          "label": "Invoices Validated",
+          "type": "number",
+          "required": true,
+          "dbKey": "data_metric"
+        },
+        {
+          "key": "evidenceNotes",
+          "label": "Evidence and Reviewer Notes",
+          "type": "textarea",
+          "required": false,
+          "dbKey": "data_evidenceNotes"
+        }
+      ]
+    },
+    {
+      "id": "clearance",
+      "title": "Government Clearance Submission Register",
+      "description": "Operational records, ownership, status, financial value, and evidence for government clearance submission.",
+      "table": "op_clearance",
+      "columns": [
+        {
+          "key": "caseReference",
+          "label": "Government Clearance Submission Reference",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_caseReference"
+        },
+        {
+          "key": "entity",
+          "label": "Legal Entity",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_entity"
+        },
+        {
+          "key": "reviewDate",
+          "label": "Review Date",
+          "type": "date",
+          "required": true,
+          "dbKey": "data_reviewDate"
+        },
+        {
+          "key": "metric",
+          "label": "Submission Value",
+          "type": "currency",
+          "required": true,
+          "dbKey": "data_metric"
+        },
+        {
+          "key": "evidenceNotes",
+          "label": "Evidence and Reviewer Notes",
+          "type": "textarea",
+          "required": false,
+          "dbKey": "data_evidenceNotes"
+        }
+      ]
+    },
+    {
+      "id": "rejection-repair",
+      "title": "Clearance Rejection Repair Register",
+      "description": "Operational records, ownership, status, financial value, and evidence for clearance rejection repair.",
+      "table": "op_rejection_repair",
+      "columns": [
+        {
+          "key": "caseReference",
+          "label": "Clearance Rejection Repair Reference",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_caseReference"
+        },
+        {
+          "key": "entity",
+          "label": "Legal Entity",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_entity"
+        },
+        {
+          "key": "reviewDate",
+          "label": "Review Date",
+          "type": "date",
+          "required": true,
+          "dbKey": "data_reviewDate"
+        },
+        {
+          "key": "metric",
+          "label": "Rejected Invoices",
+          "type": "number",
+          "required": true,
+          "dbKey": "data_metric"
+        },
+        {
+          "key": "evidenceNotes",
+          "label": "Evidence and Reviewer Notes",
+          "type": "textarea",
+          "required": false,
+          "dbKey": "data_evidenceNotes"
+        }
+      ]
+    },
+    {
+      "id": "tax-evidence",
+      "title": "VAT Evidence Assembly Register",
+      "description": "Operational records, ownership, status, financial value, and evidence for vat evidence assembly.",
+      "table": "op_tax_evidence",
+      "columns": [
+        {
+          "key": "caseReference",
+          "label": "VAT Evidence Assembly Reference",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_caseReference"
+        },
+        {
+          "key": "entity",
+          "label": "Legal Entity",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_entity"
+        },
+        {
+          "key": "reviewDate",
+          "label": "Review Date",
+          "type": "date",
+          "required": true,
+          "dbKey": "data_reviewDate"
+        },
+        {
+          "key": "metric",
+          "label": "Tax Value",
+          "type": "currency",
+          "required": true,
+          "dbKey": "data_metric"
+        },
+        {
+          "key": "evidenceNotes",
+          "label": "Evidence and Reviewer Notes",
+          "type": "textarea",
+          "required": false,
+          "dbKey": "data_evidenceNotes"
+        }
+      ]
+    },
+    {
+      "id": "buyer-status",
+      "title": "Buyer and Supplier Status Control Register",
+      "description": "Operational records, ownership, status, financial value, and evidence for buyer and supplier status control.",
+      "table": "op_buyer_status",
+      "columns": [
+        {
+          "key": "caseReference",
+          "label": "Buyer and Supplier Status Control Reference",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_caseReference"
+        },
+        {
+          "key": "entity",
+          "label": "Legal Entity",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_entity"
+        },
+        {
+          "key": "reviewDate",
+          "label": "Review Date",
+          "type": "date",
+          "required": true,
+          "dbKey": "data_reviewDate"
+        },
+        {
+          "key": "metric",
+          "label": "Trading Partners",
+          "type": "number",
+          "required": true,
+          "dbKey": "data_metric"
+        },
+        {
+          "key": "evidenceNotes",
+          "label": "Evidence and Reviewer Notes",
+          "type": "textarea",
+          "required": false,
+          "dbKey": "data_evidenceNotes"
+        }
+      ]
+    },
+    {
+      "id": "archive",
+      "title": "Compliant Invoice Archive Register",
+      "description": "Operational records, ownership, status, financial value, and evidence for compliant invoice archive.",
+      "table": "op_archive",
+      "columns": [
+        {
+          "key": "caseReference",
+          "label": "Compliant Invoice Archive Reference",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_caseReference"
+        },
+        {
+          "key": "entity",
+          "label": "Legal Entity",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_entity"
+        },
+        {
+          "key": "reviewDate",
+          "label": "Review Date",
+          "type": "date",
+          "required": true,
+          "dbKey": "data_reviewDate"
+        },
+        {
+          "key": "metric",
+          "label": "Archive Volume",
+          "type": "number",
+          "required": true,
+          "dbKey": "data_metric"
+        },
+        {
+          "key": "evidenceNotes",
+          "label": "Evidence and Reviewer Notes",
+          "type": "textarea",
+          "required": false,
+          "dbKey": "data_evidenceNotes"
+        }
+      ]
+    },
+    {
+      "id": "rollout",
+      "title": "Country Rollout Readiness Register",
+      "description": "Operational records, ownership, status, financial value, and evidence for country rollout readiness.",
+      "table": "op_rollout",
+      "columns": [
+        {
+          "key": "caseReference",
+          "label": "Country Rollout Readiness Reference",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_caseReference"
+        },
+        {
+          "key": "entity",
+          "label": "Legal Entity",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_entity"
+        },
+        {
+          "key": "reviewDate",
+          "label": "Review Date",
+          "type": "date",
+          "required": true,
+          "dbKey": "data_reviewDate"
+        },
+        {
+          "key": "metric",
+          "label": "Readiness Score",
+          "type": "number",
+          "required": true,
+          "dbKey": "data_metric"
+        },
+        {
+          "key": "evidenceNotes",
+          "label": "Evidence and Reviewer Notes",
+          "type": "textarea",
+          "required": false,
+          "dbKey": "data_evidenceNotes"
+        }
+      ]
+    },
+    {
+      "id": "jurisdiction-master",
+      "title": "Jurisdiction Mandate Registry",
+      "description": "Controlled jurisdiction mandate registry records supporting operational decisions and audit evidence.",
+      "table": "op_jurisdiction_master",
+      "columns": [
+        {
+          "key": "recordId",
+          "label": "Jurisdiction Mandate Registry ID",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_recordId"
+        },
+        {
+          "key": "name",
+          "label": "Legal Entity",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_name"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Active",
+            "Pending",
+            "Suspended",
+            "Retired"
+          ],
+          "dbKey": "data_status"
+        },
+        {
+          "key": "effectiveDate",
+          "label": "Effective Date",
+          "type": "date",
+          "required": true,
+          "dbKey": "data_effectiveDate"
+        }
+      ]
+    },
+    {
+      "id": "entity-master",
+      "title": "Legal Entity and Tax ID Master",
+      "description": "Controlled legal entity and tax id master records supporting operational decisions and audit evidence.",
+      "table": "op_entity_master",
+      "columns": [
+        {
+          "key": "recordId",
+          "label": "Legal Entity and Tax ID Master ID",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_recordId"
+        },
+        {
+          "key": "name",
+          "label": "Legal Entity",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_name"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Active",
+            "Pending",
+            "Suspended",
+            "Retired"
+          ],
+          "dbKey": "data_status"
+        },
+        {
+          "key": "effectiveDate",
+          "label": "Effective Date",
+          "type": "date",
+          "required": true,
+          "dbKey": "data_effectiveDate"
+        }
+      ]
+    },
+    {
+      "id": "format-master",
+      "title": "Invoice Format and Schema Library",
+      "description": "Controlled invoice format and schema library records supporting operational decisions and audit evidence.",
+      "table": "op_format_master",
+      "columns": [
+        {
+          "key": "recordId",
+          "label": "Invoice Format and Schema Library ID",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_recordId"
+        },
+        {
+          "key": "name",
+          "label": "Legal Entity",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_name"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Active",
+            "Pending",
+            "Suspended",
+            "Retired"
+          ],
+          "dbKey": "data_status"
+        },
+        {
+          "key": "effectiveDate",
+          "label": "Effective Date",
+          "type": "date",
+          "required": true,
+          "dbKey": "data_effectiveDate"
+        }
+      ]
+    },
+    {
+      "id": "partner-master",
+      "title": "Trading Partner Directory",
+      "description": "Controlled trading partner directory records supporting operational decisions and audit evidence.",
+      "table": "op_partner_master",
+      "columns": [
+        {
+          "key": "recordId",
+          "label": "Trading Partner Directory ID",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_recordId"
+        },
+        {
+          "key": "name",
+          "label": "Legal Entity",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_name"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Active",
+            "Pending",
+            "Suspended",
+            "Retired"
+          ],
+          "dbKey": "data_status"
+        },
+        {
+          "key": "effectiveDate",
+          "label": "Effective Date",
+          "type": "date",
+          "required": true,
+          "dbKey": "data_effectiveDate"
+        }
+      ]
+    }
+  ],
+  "domainProduct": {
+    "home": "InvoiceClear Global Command Center",
+    "context": "Jurisdiction-aware e-invoice clearance, rejection repair, and tax evidence",
+    "features": [
+      {
+        "id": "mandate-map-command",
+        "title": "Mandate & Jurisdiction Mapping",
+        "description": "Coordinate mandate & jurisdiction mapping across controlled source data, accountable review, measurable exposure, and retained evidence.",
+        "view": "evidence",
+        "modules": [
+          "mandate-map",
+          "jurisdiction-master"
+        ],
+        "actions": [
+          {
+            "id": "approve-mandate-map",
+            "label": "Approve Mandate & Jurisdiction Mapping",
+            "nextStatus": "Approved",
+            "auditDetail": "Approved mandate & jurisdiction mapping with source evidence and reviewer attribution."
+          },
+          {
+            "id": "escalate-mandate-map",
+            "label": "Escalate Mandate & Jurisdiction Mapping",
+            "nextStatus": "Investigating",
+            "auditDetail": "Escalated mandate & jurisdiction mapping for exception remediation and additional evidence."
+          }
+        ]
+      },
+      {
+        "id": "invoice-validation-command",
+        "title": "Structured Invoice Validation",
+        "description": "Coordinate structured invoice validation across controlled source data, accountable review, measurable exposure, and retained evidence.",
+        "view": "reconciliation",
+        "modules": [
+          "invoice-validation",
+          "entity-master"
+        ],
+        "actions": [
+          {
+            "id": "approve-invoice-validation",
+            "label": "Approve Structured Invoice Validation",
+            "nextStatus": "Approved",
+            "auditDetail": "Approved structured invoice validation with source evidence and reviewer attribution."
+          },
+          {
+            "id": "escalate-invoice-validation",
+            "label": "Escalate Structured Invoice Validation",
+            "nextStatus": "Investigating",
+            "auditDetail": "Escalated structured invoice validation for exception remediation and additional evidence."
+          }
+        ]
+      },
+      {
+        "id": "clearance-command",
+        "title": "Government Clearance Submission",
+        "description": "Coordinate government clearance submission across controlled source data, accountable review, measurable exposure, and retained evidence.",
+        "view": "control",
+        "modules": [
+          "clearance",
+          "format-master"
+        ],
+        "actions": [
+          {
+            "id": "approve-clearance",
+            "label": "Approve Government Clearance Submission",
+            "nextStatus": "Approved",
+            "auditDetail": "Approved government clearance submission with source evidence and reviewer attribution."
+          },
+          {
+            "id": "escalate-clearance",
+            "label": "Escalate Government Clearance Submission",
+            "nextStatus": "Investigating",
+            "auditDetail": "Escalated government clearance submission for exception remediation and additional evidence."
+          }
+        ]
+      },
+      {
+        "id": "rejection-repair-command",
+        "title": "Clearance Rejection Repair",
+        "description": "Coordinate clearance rejection repair across controlled source data, accountable review, measurable exposure, and retained evidence.",
+        "view": "deadline",
+        "modules": [
+          "rejection-repair",
+          "partner-master"
+        ],
+        "actions": [
+          {
+            "id": "approve-rejection-repair",
+            "label": "Approve Clearance Rejection Repair",
+            "nextStatus": "Approved",
+            "auditDetail": "Approved clearance rejection repair with source evidence and reviewer attribution."
+          },
+          {
+            "id": "escalate-rejection-repair",
+            "label": "Escalate Clearance Rejection Repair",
+            "nextStatus": "Investigating",
+            "auditDetail": "Escalated clearance rejection repair for exception remediation and additional evidence."
+          }
+        ]
+      },
+      {
+        "id": "tax-evidence-command",
+        "title": "VAT Evidence Assembly",
+        "description": "Coordinate vat evidence assembly across controlled source data, accountable review, measurable exposure, and retained evidence.",
+        "view": "board",
+        "modules": [
+          "tax-evidence",
+          "buyer-status"
+        ],
+        "actions": [
+          {
+            "id": "approve-tax-evidence",
+            "label": "Approve VAT Evidence Assembly",
+            "nextStatus": "Approved",
+            "auditDetail": "Approved vat evidence assembly with source evidence and reviewer attribution."
+          },
+          {
+            "id": "escalate-tax-evidence",
+            "label": "Escalate VAT Evidence Assembly",
+            "nextStatus": "Investigating",
+            "auditDetail": "Escalated vat evidence assembly for exception remediation and additional evidence."
+          }
+        ]
+      }
+    ]
+  },
+  "integrations": [
+    {
+      "id": "integration-1",
+      "name": "ERP invoice feed",
+      "category": "Domain data source",
+      "mode": "Read-only demo connector"
+    },
+    {
+      "id": "integration-2",
+      "name": "Tax determination engine",
+      "category": "Domain data source",
+      "mode": "Read-only demo connector"
+    },
+    {
+      "id": "integration-3",
+      "name": "PEPPOL access point",
+      "category": "Domain data source",
+      "mode": "Read-only demo connector"
+    },
+    {
+      "id": "integration-4",
+      "name": "Government clearance portal",
+      "category": "Domain data source",
+      "mode": "Read-only demo connector"
+    },
+    {
+      "id": "integration-5",
+      "name": "Document archive",
+      "category": "Domain data source",
+      "mode": "Read-only demo connector"
+    }
+  ],
+  "featureCount": 40,
+  "seededRecords": 300,
+  "demoUsers": 3,
+  "apiPort": 5530,
+  "dbName": "profit_ai_global_e_invoicing_compliance"
+}
